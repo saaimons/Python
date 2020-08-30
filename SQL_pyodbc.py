@@ -142,7 +142,7 @@ class sandbox:
         )
         self.conn.commit()         
     
-    def agregarDatosBeneficios(self):
+    def agregarDatos(self):
         '''
         Insercion de datos
         INSERT INTO
