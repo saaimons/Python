@@ -36,13 +36,11 @@ class sandbox:
         self.errores = []
         self.dbtablas = []
 
-    '''
-    Verificación de existencia de tabla
-    IF EXISTS
-    '''
+
     def checkifExists(self,mTabla):
         '''
         Verificación de existencia de tabla
+        IF EXISTS
         '''
         tag2 = "Check"
         print("/--------------------------/")
@@ -96,48 +94,7 @@ class sandbox:
 
       #  print(" Verificado") if checkifExsits("12345")== True else print (" No Verificado")
     
-    def checkAll(self,mTabla):
-        '''
-        Verificación de existencia de tabla
-        '''
-        tag2 = "Check"
-        print("/--------------------------/")
-        print(":Init Check")
-        
-        self.cursor.execute(
-            """
-            SELECT * from INFORMATION_SCHEMA.TABLES        
-            """
-        )
-        row = self.cursor.fetchone()
-        if row:
-            a = len(row)
-            print(" Las tablas existentes son: "+str(a))
-            for i in row: 
-                self.dbtablas.append(i)
-                
-            for i in range(len(self.dbtablas)):
-                print("                 "+str(i)+"  ->  "+self.dbtablas[i])
-            
-            print()
-            tag3= "Tablas"
-            try:
-                print(" Verificando...")
-                if self.dbtablas.pop(self.dbtablas.index(mTabla)) == mTabla:
-                    print("     Tabla:"+str(mTabla)+" existe")
-                    return True
-            except:
-                error = str(self.debug.getTime()) +"\nERROR: "+str(tag2)+"->"+str(tag3)+"-> Tabla: "+str(mTabla)+" inexistente."
-                self.errores.append(error)
-                print("     ERROR: "+str(tag2)+" "+str(tag3)+"->Tabla: "+str(mTabla)+" inexistente.")
-                return False
-        print()
-        print(":END Check")
-        print("/--------------------------/")
-    
-
-    #  print(" Verificado") if checkifExsits("12345")== True else print (" No Verificado")
-
+  
     
     '''
     Creacion de tablas
@@ -184,11 +141,12 @@ class sandbox:
             "Descripción2" VARCHAR(255) NULL DEFAULT ''NULL'' """
         )
         self.conn.commit()         
-    '''
-    Insercion de datos
-    INSERT INTO
-    '''
+    
     def agregarDatosBeneficios(self):
+        '''
+        Insercion de datos
+        INSERT INTO
+        '''
         g = tablas.valores
         c = tablas.columnas
         marker = []
