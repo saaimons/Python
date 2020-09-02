@@ -100,7 +100,7 @@ class sandbox:
     Creacion de tablas
     CREATE TABLE
     '''
-    def crearTablaBeneficios(self):
+    def crearTabla1(self):
         '''
         FORMATO 1
         '''
