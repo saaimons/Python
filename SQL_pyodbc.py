@@ -12,11 +12,11 @@ class sqlconn:
         self.dbtablas = []
         self.conn = pyodbc.connect(
             "Driver={SQL Server Native Client 11.0};"
-            "Server=127.0.0.1,56565;"
-            "UID=sa;"
-            "PWD=servidordeprueba;"
-            "Database=android_appdata;"
-            "Trusted_Connection=no"
+            "Server=127.0.0.1,1433;"
+            "UID=;"
+            "PWD=;"
+            "Database=;"
+            "Trusted_Connection=yes"
         )
 
         """
