@@ -4,7 +4,7 @@ class parserCSV:
     
     def __init__(self,tabla):
         self.path = './tablas/'
-        self.archivo = str(self.path+tabla+'/'+tabla+'.csv')
+        self.archivo = str(self.path+'/'+tabla+'.csv')
         self.activarDebug = True
         self.columnas = []   
         self.external_config = pd.read_csv(self.archivo)
