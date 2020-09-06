@@ -1,5 +1,5 @@
 import pyodbc
-
+import parserCsvToSql as parser
 class sqlconn:
     
     def __init__(self):    
@@ -27,9 +27,6 @@ class sqlconn:
 
         """
         self.cursor = self.conn.cursor()
-
-
-
 
     def checkifExists(self,mTabla):
         '''
@@ -108,3 +105,4 @@ class sqlconn:
 
 conexion = sqlconn()
 conexion.checkifExists("tabla_1")
+
